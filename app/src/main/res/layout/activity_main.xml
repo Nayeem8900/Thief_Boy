@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ThiefBoy.MainActivity">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="33dp"
+        android:layout_weight="1"
+        android:text="attmept" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv"
+        android:layout_marginTop="32dp"
+        android:layout_weight="1"
+        android:text="GPS" />
+
+    <TextView
+        android:id="@+id/ownmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1"
+        android:layout_marginTop="26dp"
+        android:text="Setted Mail" />
+        />
+
+    <EditText
+        android:layout_below="@+id/ownmail"
+        android:id="@+id/Ed"
+        android:text="Set Mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/Setbt"
+        android:layout_below="@+id/Ed"
+        android:text="Set Owner Mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_below="@+id/Setbt"
+        android:id="@+id/En"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable Adminstrator"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="71dp" />
+
+
+
+    <Button
+        android:layout_below="@+id/En"
+        android:id="@+id/DIS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Disable Adminstrator" />
+
+    <Button
+        android:layout_below="@+id/DIS"
+        android:id="@+id/lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Lock" />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdkVersion 26
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    packagingOptions {
+        pickFirst 'META-INF/LICENSE.txt' // picks the JavaMail license file
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "FROM_EMAIL", "\"theftsystem@gmail.com\"")
+            buildConfigField("String", "FROM_EMAIL_PASSWORD", "\"theftsystem@123\"")
+            buildConfigField("String", "EMAIL_SUBJECT", "\"Phone Last Location\"")
+            buildConfigField("String", "SMTP_SERVER", "\"smtp.gmail.com\"")
+            buildConfigField("String", "SMTP_PORT", "\"587\"")
+
+        }
+        release {
+            buildConfigField("String", "FROM_EMAIL", "\"theftsystem@gmail.com\"")
+            buildConfigField("String", "FROM_EMAIL_PASSWORD", "\"theftsystem@123\"")
+            buildConfigField("String", "EMAIL_SUBJECT", "\"Phone Last Location\"")
+            buildConfigField("String", "SMTP_SERVER", "\"smtp.gmail.com\"")
+            buildConfigField("String", "SMTP_PORT", "\"587\"")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.sun.mail:android-mail:1.6.2'
+    implementation 'com.sun.mail:android-activation:1.6.2'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation "com.android.support:support-compat:28.0.0"
+
+}

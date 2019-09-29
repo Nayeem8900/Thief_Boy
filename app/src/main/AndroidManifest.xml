@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.example.ThiefBoy.Notif.Noti_fication"
+        android:allowBackup="true"
+        android:icon="@drawable/thief"
+        android:label="Thief Boy"
+        android:roundIcon="@drawable/thief"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.example.ThiefBoy.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.example.ThiefBoy.Service.for_service"/>
+
+        <receiver android:name="com.example.ThiefBoy.MyAdmin" android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin"
+                android:resource="@xml/policies" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+
+        </receiver>
+
+
+    </application>
+
+</manifest>
